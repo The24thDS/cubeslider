@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
   public float restartDelay = 2f;
   public GameObject completeLevelUI;
   public PlayerMovement movement;
+  public ObstacleSpawner os;
 
   public void EndGame()
   {
@@ -28,4 +29,10 @@ public class GameManager : MonoBehaviour
     movement.enabled = false;
     completeLevelUI.SetActive(true);
   }
+
+  public void increaseObstacleSpawnRate()
+  {
+    os.timeBetweenWaves -= 0.1f;
+  }
+
 }
